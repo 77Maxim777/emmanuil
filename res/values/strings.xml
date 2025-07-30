@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">Эммануил</string>
+    <string name="document_preview">ПРЕВЬЮ:</string>
+    <string name="document_full_text">ПОЛНЫЙ ТЕКСТ ДОКУМЕНТА</string>
+    <string name="document_created">ДОКУМЕНТ СОЗДАН</string>
+</resources>
