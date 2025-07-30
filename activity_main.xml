@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <!-- Индикатор режима -->
+    <TextView
+        android:id="@+id/mode_indicator"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#1976D2"
+        android:gravity="center"
+        android:padding="4dp"
+        android:text="СВОБОДНОЕ ОБЩЕНИЕ"
+        android:textColor="#FFFFFF"
+        android:textSize="14sp"
+        android:textStyle="bold" />
+
+    <!-- Индикатор статуса участников -->
+    <LinearLayout
+        android:id="@+id/participants_status"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:padding="4dp" />
+
+    <!-- Индикатор активных участников -->
+    <TextView
+        android:id="@+id/active_participants"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#4CAF50"
+        android:gravity="center"
+        android:padding="4dp"
+        android:textColor="#FFFFFF"
+        android:textSize="14sp"
+        android:visibility="gone" />
+
+    <!-- Основное окно чата (больше по умолчанию) -->
+    <WebView
+        android:id="@+id/webview"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+    <!-- История сообщений (меньше по умолчанию) -->
+    <ScrollView
+        android:id="@+id/messages_scroll"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.2">
+
+        <TextView
+            android:id="@+id/messages_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            android:textSize="14sp" />
+    </ScrollView>
+
+    <!-- Панель для добавления участников -->
+    <LinearLayout
+        android:id="@+id/participant_input"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="8dp">
+
+        <EditText
+            android:id="@+id/participant_url_input"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="Вставьте URL чата (https://chat.qwen.ai/c/...)"
+            android:inputType="textUri" />
+
+        <Button
+            android:id="@+id/btn_add_participant"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:background="#1976D2"
+            android:text="Добавить"
+            android:textColor="#FFFFFF" />
+
+        <Button
+            android:id="@+id/btn_remove_participant"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:background="#D32F2F"
+            android:text="Удалить"
+            android:textColor="#FFFFFF" />
+    </LinearLayout>
+
+    <!-- Управление -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/status_text"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="#2E7D32"
+            android:gravity="center"
+            android:padding="8dp"
+            android:textColor="#FFFFFF"
+            android:textSize="16sp" />
+
+        <Button
+            android:id="@+id/btn_toggle_mode"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#1976D2"
+            android:text="Режим"
+            android:textColor="#FFFFFF" />
+
+        <Button
+            android:id="@+id/btn_open_tasks"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#1976D2"
+            android:text="Задачи"
+            android:textColor="#FFFFFF" />
+
+        <Button
+            android:id="@+id/btn_show_documents"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#1976D2"
+            android:text="Документы"
+            android:textColor="#FFFFFF" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/last_message"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="8dp"
+        android:ellipsize="end"
+        android:singleLine="true"
+        android:text="Последнее сообщение: ..." />
+</LinearLayout>
